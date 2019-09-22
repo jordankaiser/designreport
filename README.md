@@ -19,16 +19,6 @@ $ npm start
 $ npm run generate
 ```
 
-## ScrollMagic setup.
-
-When attemping to import the library as normal I got an error, `window not defined`. The issue was we needed this JS library to run before instatiating the root of the Vue application. See [The Plugins Directory](https://nuxtjs.org/guide/plugins#vue-plugins). The key thing is is when importing a libary via the plugin object in nuxt.config.js we're laoding the plugin before mounting the app, thus the plugin now know what `window` is.
-
-I got this setup while looking at libraries to solve this issue. This person describes how to get ScrollMagic and GSAP working without any libaries. [How to avoid this plugin in Nuxt 2.0+](https://github.com/pirony/ks-vue-scrollmagic/issues/13).
-
-Things I want to look at adjusting.
-
-- Look at seperating out GSAP and ScrollMagic into seperate plugin imports. 
-
 ## Code Editor setup.
 
 The link at the end is generally how to set things up. Things to pay attention to.
@@ -100,6 +90,17 @@ import debounce from 'lodash/debounce'
 ### Webpack analyzer
 
 To analyze the webpack bundle run `npm run analyze`. That will generate a report at `.nuxt/stats/client.html`.
+
+### ScrollMagic setup.
+
+When attemping to import the library as normal I got an error, `window not defined`. The issue was we needed this JS library to run before instatiating the root of the Vue application. See [The Plugins Directory](https://nuxtjs.org/guide/plugins#vue-plugins). The key thing is is when importing a libary via the plugin object in nuxt.config.js we're laoding the plugin before mounting the app, thus the plugin now know what `window` is.
+
+I got this setup while looking at libraries to solve this issue. This person describes how to get ScrollMagic and GSAP working without any libaries. [How to avoid this plugin in Nuxt 2.0+](https://github.com/pirony/ks-vue-scrollmagic/issues/13).
+
+Things I want to look at adjusting.
+
+- Look at seperating out GSAP and ScrollMagic into seperate plugin imports. 
+
 
 ## References
 
